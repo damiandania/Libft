@@ -6,7 +6,7 @@
 /*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:30:38 by ddania-c          #+#    #+#             */
-/*   Updated: 2023/03/27 14:56:19 by ddania-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:48:14 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include <limits.h>
 # include <stdint.h>
 # include <bsd/string.h>
-
-
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);

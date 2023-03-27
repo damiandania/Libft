@@ -6,7 +6,7 @@
 #    By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:13:18 by ddania-c          #+#    #+#              #
-#    Updated: 2023/03/27 15:46:13 by ddania-c         ###   ########.fr        #
+#    Updated: 2023/03/27 18:49:25 by ddania-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,6 @@ SRCS = $(SRC_DIR)/ft_atoi.c \
 			$(SRC_DIR)/ft_type_d.c\
 			$(SRC_DIR)/ft_type_u.c\
 			$(SRC_DIR)/ft_type_p.c\
-			main.c
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 INCS = $(INC_DIR)/libft.h
 
