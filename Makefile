@@ -10,99 +10,95 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=		libft.a
+NAME		=	libft.a
 
-# directorios de archivos fuente, libreria y objets
-SRC_DIR = ./src
-OBJ_DIR = ./obj
-INC_DIR = ./includes
+CC			=	clang
 
-# Archivos fuente, libreria y objertos
-SRCS = $(SRC_DIR)/ft_atoi.c \
-			$(SRC_DIR)/ft_bzero.c \
-			$(SRC_DIR)/ft_calloc.c \
-			$(SRC_DIR)/ft_isalnum.c \
-			$(SRC_DIR)/ft_isalpha.c \
-			$(SRC_DIR)/ft_isascii.c \
-			$(SRC_DIR)/ft_isdigit.c \
-			$(SRC_DIR)/ft_isprint.c \
-			$(SRC_DIR)/ft_itoa.c \
-			$(SRC_DIR)/ft_memchr.c \
-			$(SRC_DIR)/ft_memcmp.c \
-			$(SRC_DIR)/ft_memcpy.c \
-			$(SRC_DIR)/ft_memmove.c \
-			$(SRC_DIR)/ft_memset.c \
-			$(SRC_DIR)/ft_putchar_fd.c \
-			$(SRC_DIR)/ft_putendl_fd.c \
-			$(SRC_DIR)/ft_putnbr_fd.c \
-			$(SRC_DIR)/ft_putstr_fd.c \
-			$(SRC_DIR)/ft_split.c \
-			$(SRC_DIR)/ft_strchr.c \
-			$(SRC_DIR)/ft_strdup.c \
-			$(SRC_DIR)/ft_striteri.c \
-			$(SRC_DIR)/ft_strjoin.c \
-			$(SRC_DIR)/ft_strlcat.c \
-			$(SRC_DIR)/ft_strlcpy.c \
-			$(SRC_DIR)/ft_strlen.c \
-			$(SRC_DIR)/ft_strmapi.c \
-			$(SRC_DIR)/ft_strncmp.c \
-			$(SRC_DIR)/ft_strnstr.c \
-			$(SRC_DIR)/ft_strrchr.c \
-			$(SRC_DIR)/ft_strtrim.c \
-			$(SRC_DIR)/ft_substr.c \
-			$(SRC_DIR)/ft_tolower.c \
-			$(SRC_DIR)/ft_toupper.c \
-			$(SRC_DIR)/ft_lstnew.c \
-			$(SRC_DIR)/ft_lstadd_front.c \
-			$(SRC_DIR)/ft_lstsize.c \
-			$(SRC_DIR)/ft_lstlast.c \
-			$(SRC_DIR)/ft_lstadd_back.c \
-			$(SRC_DIR)/ft_lstdelone.c \
-			$(SRC_DIR)/ft_lstclear.c \
-			$(SRC_DIR)/ft_lstiter.c \
-			$(SRC_DIR)/ft_lstmap.c \
-			$(SRC_DIR)/ft_printf.c \
-			$(SRC_DIR)/ft_find_type.c\
-			$(SRC_DIR)/ft_type_c.c\
-			$(SRC_DIR)/ft_type_s.c\
-			$(SRC_DIR)/ft_type_x.c\
-			$(SRC_DIR)/ft_type_d.c\
-			$(SRC_DIR)/ft_type_u.c\
-			$(SRC_DIR)/ft_type_p.c\
-OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-INCS = $(INC_DIR)/libft.h
+CFILE		=	ft_atoi.c 		\
+				ft_bzero.c 		\
+				ft_calloc.c 	\
+				ft_isalnum.c 	\
+				ft_isalpha.c 	\
+				ft_isascii.c 	\
+				ft_isdigit.c 	\
+				ft_isprint.c 	\
+				ft_itoa.c 		\
+				ft_memchr.c 	\
+				ft_memcmp.c 	\
+				ft_memcpy.c 	\
+				ft_memmove.c 	\
+				ft_memset.c 	\
+				ft_putchar_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c 	\
+				ft_putstr_fd.c 	\
+				ft_split.c 		\
+				ft_strchr.c 	\
+				ft_strdup.c 	\
+				ft_striteri.c 	\
+				ft_strjoin.c 	\
+				ft_strlcat.c 	\
+				ft_strlcpy.c 	\
+				ft_strlen.c 	\
+				ft_strmapi.c 	\
+				ft_strncmp.c 	\
+				ft_strnstr.c 	\
+				ft_strrchr.c 	\
+				ft_strtrim.c 	\
+				ft_substr.c 	\
+				ft_tolower.c 	\
+				ft_toupper.c 	\
+				ft_lstnew.c 	\
+				ft_lstadd_front.c\
+				ft_lstsize.c 	\
+				ft_lstlast.c 	\
+				ft_lstadd_back.c\
+				ft_lstdelone.c 	\
+				ft_lstclear.c 	\
+				ft_lstiter.c 	\
+				ft_lstmap.c 	\
+				ft_printf.c 	\
+				ft_find_type.c	\
+				ft_type_c.c		\
+				ft_type_s.c		\
+				ft_type_x.c		\
+				ft_type_d.c		\
+				ft_type_u.c		\
+				ft_type_p.c		\
 
-# opciones de compilacion
-CC			=		gcc
-RM			=		rm -f
-CFLAGS		=		-Wall -Wextra -Werror
+CFILE_DIR	=	./src/
 
-# reglas
+SRC			=	$(addprefix $(CFILE_DIR), $(CFILE))
+
+INCLUDE_DIR	=	./includes/
+
+FLAG		=	-Wall -Wextra -Werror
+
+INCLUDE		=	libft.h
+
+OBJ			=	$(SRC:.c=.o)
+
+.c.o:
+	@$(CC) $(FLAG) -c $< -o $@
+
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(OBJ)
+	@echo "Creating Libft"
+	@ar rc $(NAME) $(OBJ)
+	@echo "OK\n"
 
-#$(SRC_DIR)/%.c$(OBJ_DIR)/%.o: $(SRCS)
-#	$(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME):	$(OBJS)
-	@echo "\033[0;33m\nCOMPILING LIBFT..."
-	@$(CC) $(CFLAGS) $(OBJS) -o $@
-	@echo "\033[1;32m./Libft created\n"
 
 clean:
-	@echo "\033[0;31mDeleting Libft object..."
-	@$(RM) $(OBJS)
-	@echo "\033[1;32mDone\n"
+	@echo "Deleting Libft object..."
+	@rm -rf $(OBJ)
+	@echo "OK\n"
 
 fclean: clean
-	@echo "\033[0;31mDeleting Libft executable..."
-	@$(RM) $(NAME)
-	@echo "\033[1;32mDone\n"
+	@echo "Deleting Libft executable..."
+	@rm -rf $(NAME)
+	@echo "OK\n"
 
-re:		fclean $(NAME)
+re: fclean all
 
-.PHONY:	all clean fclean re bonus
-
+.PHONY: all clean fclean re

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:30:38 by ddania-c          #+#    #+#             */
-/*   Updated: 2023/03/27 18:48:14 by ddania-c         ###   ########.fr       */
+/*   Created: 2021/10/06 02:12:39 by arthur            #+#    #+#             */
+/*   Updated: 2022/01/08 22:51:52 by asimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <stdarg.h>
 # include <limits.h>
 # include <stdint.h>
-# include <bsd/string.h>
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
