@@ -6,7 +6,7 @@
 #    By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:13:18 by ddania-c          #+#    #+#              #
-#    Updated: 2023/03/27 18:49:25 by ddania-c         ###   ########.fr        #
+#    Updated: 2023/05/20 13:56:01 by ddania-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,8 @@ CFILE		=	ft_atoi.c 		\
 				ft_type_d.c		\
 				ft_type_u.c		\
 				ft_type_p.c		\
+				get_next_line.c	\
+				get_next_line_utils.c\
 
 CFILE_DIR	=	./src/
 

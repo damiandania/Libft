@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 02:12:39 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/08 22:51:52 by asimon           ###   ########.fr       */
+/*   Updated: 2023/05/20 13:59:07 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# include <fcntl.h>
 # include <string.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -84,5 +90,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// GNL
+char	*get_next_line(int fd);
+char	*read_and_reserve(int fd, char *reserve);
+char	*buffer_to_reserve(char *reserve, char *buffer);
+char	*reserve_to_line(char *reserve);
+char	*get_new_reserve(char *reserve, char *line);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr_gnl(const char *str);
 
 #endif
