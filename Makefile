@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: dania <dania@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:13:18 by ddania-c          #+#    #+#              #
-#    Updated: 2023/05/20 13:56:01 by ddania-c         ###   ########.fr        #
+#    Updated: 2023/07/22 12:47:26 by dania            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a
 
-CC			=	clang
+CC			=	cc
 
 CFILE		=	ft_atoi.c 		\
 				ft_bzero.c 		\
@@ -47,6 +47,7 @@ CFILE		=	ft_atoi.c 		\
 				ft_strtrim.c 	\
 				ft_substr.c 	\
 				ft_tolower.c 	\
+				ft_strcmp.c		\
 				ft_toupper.c 	\
 				ft_lstnew.c 	\
 				ft_lstadd_front.c\
@@ -72,11 +73,11 @@ CFILE_DIR	=	./src/
 
 SRC			=	$(addprefix $(CFILE_DIR), $(CFILE))
 
-INCLUDE_DIR	=	./includes/
+INC_DIR		=	./includes/
 
 FLAG		=	-Wall -Wextra -Werror
 
-INCLUDE		=	libft.h
+INC			=	libft.h
 
 OBJ			=	$(SRC:.c=.o)
 
