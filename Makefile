@@ -6,7 +6,7 @@
 #    By: dania <dania@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:13:18 by ddania-c          #+#    #+#              #
-#    Updated: 2023/07/22 12:47:26 by dania            ###   ########.fr        #
+#    Updated: 2023/07/22 14:18:05 by dania            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,26 +81,31 @@ INC			=	libft.h
 
 OBJ			=	$(SRC:.c=.o)
 
+GREEN	= \033[0;32m
+BLUE	= \033[0;34m
+ORANGE	= \033[0;33m
+RESET	= \033[0m
+
 .c.o:
 	@$(CC) $(FLAG) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "Creating Libft"
+	@echo "$(BLUE)Creating Libft...$(RESET)"
 	@ar rc $(NAME) $(OBJ)
-	@echo "OK\n"
+	@echo "$(GREEN)OK$(RESET)"
 
 
 clean:
-	@echo "Deleting Libft object..."
+	@echo "$(ORANGE)Deleting Libft object...$(RESET)"
 	@rm -rf $(OBJ)
-	@echo "OK\n"
+	@echo "$(GREEN)OK$(RESET)"
 
-fclean: clean
-	@echo "Deleting Libft executable..."
+fclean:
+	@echo "$(ORANGE)Deleting Libft executable...$(RESET)"
 	@rm -rf $(NAME)
-	@echo "OK\n"
+	@echo "$(GREEN)OK$(RESET)"
 
 re: fclean all
 
