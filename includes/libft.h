@@ -6,7 +6,7 @@
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 02:12:39 by arthur            #+#    #+#             */
-/*   Updated: 2023/07/21 17:16:41 by dania            ###   ########.fr       */
+/*   Updated: 2023/07/25 19:30:01 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char*s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
-int		ft_atoi(const char *nptr);
+long int	ft_atoi(const char *nptr);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 
 char	*ft_strnstr(const char *big, const char *lte, size_t len);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 19:20:50 by ddania-c          #+#    #+#             */
-/*   Updated: 2023/03/27 15:04:51 by ddania-c         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:35:35 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 #include "../includes/libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
-	int	i;
 	int	ret;
 
-	i = 0;
-	if (s)
+	if (str)
 	{
-		while (s[i])
+		ret = write (fd, str, ft_strlen(str));
+		if (ret == -1)
 		{
-			ret = write (fd, &s[i++], 1);
-			if (ret == -1)
-			{
-				perror("write error");
-				exit(1);
-			}
+			perror("write error");
+			exit(1);
 		}
 	}
 }
