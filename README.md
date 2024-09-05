@@ -1,48 +1,57 @@
 <p>
-<img src="https://github.com/damiandania/damiandania/blob/main/Pics/Printf.png"
-	alt="Project pic" width="150" height="150"/>
+<img src="https://github.com/damiandania/damiandania/blob/main/Pics/Libft.png"
+    alt="Project pic" width="150" height="150"/>
 </p>
 
-# Printf 🖨️
+# Libft 📚
 
-**Printf** is a project that involves recreating the C library function `printf`. The goal is to understand and implement the mechanics of formatted output.
+**Libft** is a project that involves creating a custom C library. The goal is to reimplement standard C library functions and create additional utility functions to be used in future projects.
 
 ## Features
 
-- **Formatted Output:** Handle various format specifiers like `%d`, `%s`, `%c`, `%x`, etc.
-- **Custom Implementation:** Implement the core functionality of `printf` from scratch.
-- **Error Handling:** Gracefully handle errors and edge cases.
+- **Standard Library Functions:** Reimplement standard C library functions like `strlen`, `strcpy`, `strcmp`, etc.
+- **Utility Functions:** Implement additional utility functions for string manipulation, memory management, and linked list operations.
+- **Modular Design:** Organize functions into separate modules for better maintainability.
 
 ## Technologies Used
 
-- **C:** The project is implemented in C.
+- **C:** The library is implemented in C.
 
 ## Installation
 
 1. **Clone this repository:**
-	```bash
-	git clone https://github.com/damiandania/Printf.git
-	```
+    ```bash
+    git clone https://github.com/damiandania/Libft.git
+    ```
 
 2. **Navigate to the project directory:**
-	```bash
-	cd Printf
-	```
+    ```bash
+    cd Libft
+    ```
 
-3. **Build the project:**
-	```bash
-	make
-	```
+3. **Build the library:**
+    ```bash
+    make
+    ```
 
 ## Usage
 
-Once the project is built, you can use the `ft_printf` function in your C programs. For example:
+Once the library is built, you can include it in your C projects. For example:
 
 ```c
-#include "ft_printf.h"
+#include "libft.h"
 
 int main() {
-	ft_printf("Hello, %s!\n", "world");
-	ft_printf("The number is %d.\n", 42);
-	return 0;
+    char *str = ft_strdup("Hello, Libft!");
+    ft_putstr(str);
+    free(str);
+    return 0;
 }
+```
+
+Compile and link your program with the libft.a library:
+
+```bash
+gcc -o my_program my_program.c libft.a
+./my_program
+```
