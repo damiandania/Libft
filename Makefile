@@ -6,12 +6,11 @@
 #    By: damiandania <damiandania@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:13:18 by ddania-c          #+#    #+#              #
-#    Updated: 2024/10/17 13:50:46 by damiandania      ###   ########.fr        #
+#    Updated: 2024/10/17 13:51:04 by damiandania      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a
-
 
 CC			=	cc
 
